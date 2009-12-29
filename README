@@ -1,0 +1,77 @@
+Win32-WMIC
+
+Windows Management Instrumentation Command-line (WMIC), which uses the
+power of Windows Management Instrumentation (WMI) to enable systems
+management from the command line, is one of those reasons.
+
+WMI has been an important part of Microsoft's systems management
+initiative since Microsoft Systems Management Server (SMS) 2.0 and has
+grown in popularity since the introduction of Windows 2000. However, until
+the introduction of WMIC, you couldn't easily access the WMI repository or
+the WMI namespace from a command prompt.
+
+WMIC extends WMI for operation from several command-line interfaces and
+through batch scripts. Before WMIC, you used WMI-based applications
+(such as SMS), the WMI Scripting API, or tools such as CIM Studio to manage
+WMI-enabled computers. Without a firm grasp on a programming language such
+as C++ or a scripting language such as VBScript and a basic understanding
+of the WMI namespace, do-it-yourself systems management with WMI was
+difficult. WMIC changes this situation by giving you a powerful,
+user-friendly interface to the WMI namespace.
+
+WMIC is more intuitive than WMI, in large part because of aliases. Aliases
+take simple commands that you enter at the command line, then act upon the
+WMI namespace in a predefined way, such as constructing a complex WMI Query
+Language (WQL) command from a simple WMIC alias Get command. Thus, aliases
+act as friendly syntax intermediaries between you and the namespace.
+
+See this URL for more details: [last checked Mon Dec 28 21:42:44 2009 ]
+http://technet.microsoft.com/en-us/library/bb742610.aspx
+
+INSTALLATION
+
+To install this module, run the following commands:
+
+	perl Makefile.PL
+	make
+	make test
+	make install
+	
+SYNOPSIS
+
+    use Win32::WMIC;
+
+    my $wmic = Win32::WMIC->new();
+    my $wql  = "useraccount list brief";
+    my $csv  = $wmic->query($wql)->data;
+    my $data = $wmic->parse;
+
+SUPPORT AND DOCUMENTATION
+
+After installing, you can find documentation for this module with the
+perldoc command.
+
+    perldoc Win32::WMIC
+
+You can also look for information at:
+
+    RT, CPAN's request tracker
+        http://rt.cpan.org/NoAuth/Bugs.html?Dist=Win32-WMIC
+
+    AnnoCPAN, Annotated CPAN documentation
+        http://annocpan.org/dist/Win32-WMIC
+
+    CPAN Ratings
+        http://cpanratings.perl.org/d/Win32-WMIC
+
+    Search CPAN
+        http://search.cpan.org/dist/Win32-WMIC/
+
+
+COPYRIGHT AND LICENCE
+
+Copyright (C) 2009 Al Newkirk
+
+This program is free software; you can redistribute it and/or modify it
+under the same terms as Perl itself.
+

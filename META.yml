@@ -1,0 +1,25 @@
+--- #YAML:1.0
+name:               Win32-WMIC
+version:            0.01
+abstract:           Access to the MS Windows Management Instrumentation Utility!
+author:
+    - Al Newkirk <awncorp@cpan.org>
+license:            perl
+distribution_type:  module
+configure_requires:
+    ExtUtils::MakeMaker:  0
+build_requires:
+    ExtUtils::MakeMaker:  0
+requires:
+    DBD::AnyData:   0
+    DBIx::Simple:   0
+    SQL::Abstract:  0
+    Test::More:     0
+no_index:
+    directory:
+        - t
+        - inc
+generated_by:       ExtUtils::MakeMaker version 6.54
+meta-spec:
+    url:      http://module-build.sourceforge.net/META-spec-v1.4.html
+    version:  1.4
